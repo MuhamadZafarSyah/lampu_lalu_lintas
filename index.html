@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Pertigaan</title>
+  </head>
+  <body>
+    <div class="flex justify-center items-center w-screen">
+      <div
+        id="traffic-1"
+        class="bg-black w-10 h-20 mt-[8rem] mr-[15rem] absolute z-10 border-white border-[1.5px]"
+      >
+        <div class="p-3">
+          <div class="red-lamp w-5 h-5 bg-red-950 mb-2"></div>
+          <div class="yellow-lamp w-5 h-5 bg-yellow-900 mb-2"></div>
+          <div class="green-lamp w-5 h-5 bg-green-900 mb-2"></div>
+        </div>
+      </div>
+      <div class="w-5 h-20 mt-[12.1rem] mr-[15rem] bg-stone-800 absolute"></div>
+
+      <div
+        id="traffic-2"
+        class="bg-black w-10 h-20 mt-[30rem] ml-[15rem] absolute z-[99] border-white border-[1.5px]"
+      >
+        <div class="p-3">
+          <div class="red-lamp w-5 h-5 bg-red-950 mb-2"></div>
+          <div class="yellow-lamp w-5 h-5 bg-yellow-900 mb-2"></div>
+          <div class="green-lamp w-5 h-5 bg-green-900 mb-2"></div>
+        </div>
+      </div>
+      <div class="w-5 h-20 mt-[36rem] ml-[15rem] bg-stone-800 absolute"></div>
+
+      <div
+        id="traffic-3"
+        class="bg-black w-10 h-20 mt-[30rem] mr-[15rem] absolute z-[99] border-white border-[1.5px]"
+      >
+        <div class="p-3">
+          <div class="red-lamp w-5 h-5 bg-red-950 mb-2"></div>
+          <div class="yellow-lamp w-5 h-5 bg-yellow-900 mb-2"></div>
+          <div class="green-lamp w-5 h-5 bg-green-900 mb-2"></div>
+        </div>
+      </div>
+      <div class="w-5 h-20 mt-[36rem] mr-[15rem] bg-stone-800 absolute"></div>
+    </div>
+    <div class="flex justify-center items-center h-screen z-8">
+      <div class="w-full h-44 mb-48 bg-black">
+        <div class="flex justify-center items-center h-full">
+          <div class="h-5 w-16 bg-white z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-white z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-white z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-white z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-white z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-white z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-white z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-black z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-black z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-black z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-white z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-white z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-white z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-white z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-white z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-white z-10 mr-5"></div>
+          <div class="h-5 w-16 bg-white z-10 mr-5"></div>
+        </div>
+      </div>
+      <div class="w-44 h-[76%] mt-40 bg-black absolute">
+        <div
+          class="flex flex-col justify-center items-center h-full w full mt-20"
+        >
+          <div class="h-16 w-5 bg-white z-10 mb-5"></div>
+          <div class="h-16 w-5 bg-white z-10 mb-5"></div>
+          <div class="h-16 w-5 bg-white z-10 mb-5"></div>
+          <div class="h-16 w-5 bg-white z-10 mb-5"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+    <script>
+      const merah_mati = "bg-red-950";
+      const merah_menyala = "bg-red-700";
+      const kuning_mati = "bg-yellow-900";
+      const kuning_menyala = "bg-yellow-300";
+      const hijau_mati = "bg-green-900";
+      const hijau_menyala = "bg-green-500";
+
+      // kalau hijau true
+      let traffic_1 = false;
+      let traffic_2 = false;
+      let traffic_3 = false;
+
+      const traffic_1_red_lamp = document.querySelector("#traffic-1 .red-lamp");
+      const traffic_1_yellow_lamp = document.querySelector(
+        "#traffic-1 .yellow-lamp"
+      );
+      const traffic_1_green_lamp = document.querySelector(
+        "#traffic-1 .green-lamp"
+      );
+
+      const traffic_2_red_lamp = document.querySelector("#traffic-2 .red-lamp");
+      const traffic_2_yellow_lamp = document.querySelector(
+        "#traffic-2 .yellow-lamp"
+      );
+      const traffic_2_green_lamp = document.querySelector(
+        "#traffic-2 .green-lamp"
+      );
+
+      const traffic_3_red_lamp = document.querySelector("#traffic-3 .red-lamp");
+      const traffic_3_yellow_lamp = document.querySelector(
+        "#traffic-3 .yellow-lamp"
+      );
+      const traffic_3_green_lamp = document.querySelector(
+        "#traffic-3 .green-lamp"
+      );
+
+      let setFirstLamp = () => {
+        // random integer 1 atau 2 karna lampu lalulintas 1 dan 2 sama sedangkan 3 berbeda.
+        let what = Math.floor(Math.random() * 2) + 1;
+
+        if (what == 1) {
+          // lampu 1 & 2 merah, 3 hijau
+
+          traffic_1_red_lamp.classList.remove(merah_mati);
+          traffic_1_red_lamp.classList.add(merah_menyala);
+
+          traffic_2_red_lamp.classList.remove(merah_mati);
+          traffic_2_red_lamp.classList.add(merah_menyala);
+
+          traffic_3_green_lamp.classList.remove(hijau_mati);
+          traffic_3_green_lamp.classList.add(hijau_menyala);
+          traffic_3 = true;
+        } else {
+          traffic_1_green_lamp.classList.remove(hijau_mati);
+          traffic_1_green_lamp.classList.add(hijau_menyala);
+          traffic_1 = true;
+
+          traffic_2_green_lamp.classList.remove(hijau_mati);
+          traffic_2_green_lamp.classList.add(hijau_menyala);
+          traffic_2 = true;
+
+          traffic_3_red_lamp.classList.remove(merah_mati);
+          traffic_3_red_lamp.classList.add(merah_menyala);
+        }
+      };
+
+      const timer = 5000;
+
+      setFirstLamp();
+
+      let lampLogic = () => {
+        if (traffic_3) {
+          // matiin lampu merah 1 & 2
+          traffic_1_red_lamp.classList.remove(merah_menyala);
+          traffic_1_red_lamp.classList.add(merah_mati);
+
+          traffic_2_red_lamp.classList.remove(merah_menyala);
+          traffic_2_red_lamp.classList.add(merah_mati);
+
+          // matiin lampu ijo lampu 3
+          traffic_3_green_lamp.classList.remove(hijau_menyala);
+          traffic_3_green_lamp.classList.add(hijau_mati);
+
+          // nyalain semua lampu kuning
+          traffic_1_yellow_lamp.classList.remove(kuning_mati);
+          traffic_1_yellow_lamp.classList.add(kuning_menyala);
+
+          traffic_2_yellow_lamp.classList.remove(kuning_mati);
+          traffic_2_yellow_lamp.classList.add(kuning_menyala);
+
+          traffic_3_yellow_lamp.classList.remove(kuning_mati);
+          traffic_3_yellow_lamp.classList.add(kuning_menyala);
+
+          setTimeout(() => {
+            // matiin semua lampu kuning
+            traffic_1_yellow_lamp.classList.remove(kuning_menyala);
+            traffic_1_yellow_lamp.classList.add(kuning_mati);
+
+            traffic_2_yellow_lamp.classList.remove(kuning_menyala);
+            traffic_2_yellow_lamp.classList.add(kuning_mati);
+
+            traffic_3_yellow_lamp.classList.remove(kuning_menyala);
+            traffic_3_yellow_lamp.classList.add(kuning_mati);
+
+            // nyalain lampu hijau 1 & 2 dan setting variablenya
+            traffic_1_green_lamp.classList.remove(hijau_mati);
+            traffic_1_green_lamp.classList.add(hijau_menyala);
+            traffic_1 = true;
+
+            traffic_2_green_lamp.classList.remove(hijau_mati);
+            traffic_2_green_lamp.classList.add(hijau_menyala);
+            traffic_2 = true;
+
+            // nyalain lampu merah 3 dan seting variable
+            traffic_3_red_lamp.classList.remove(merah_mati);
+            traffic_3_red_lamp.classList.add(merah_menyala);
+            traffic_3 = false;
+          }, 1000);
+        } else if (traffic_1 && traffic_2) {
+          // matiin lampu hijau 1 & 2
+          traffic_1_green_lamp.classList.remove(hijau_menyala);
+          traffic_1_green_lamp.classList.add(hijau_mati);
+
+          traffic_2_green_lamp.classList.remove(hijau_menyala);
+          traffic_2_green_lamp.classList.add(hijau_mati);
+
+          // matiin lampu merah lampu 3
+          traffic_3_red_lamp.classList.remove(merah_menyala);
+          traffic_3_red_lamp.classList.add(merah_mati);
+
+          // nyalain semua lampu kuning
+          traffic_1_yellow_lamp.classList.remove(kuning_mati);
+          traffic_1_yellow_lamp.classList.add(kuning_menyala);
+
+          traffic_2_yellow_lamp.classList.remove(kuning_mati);
+          traffic_2_yellow_lamp.classList.add(kuning_menyala);
+
+          traffic_3_yellow_lamp.classList.remove(kuning_mati);
+          traffic_3_yellow_lamp.classList.add(kuning_menyala);
+
+          setTimeout(() => {
+            // matiin semua lampu kuning
+            traffic_1_yellow_lamp.classList.remove(kuning_menyala);
+            traffic_1_yellow_lamp.classList.add(kuning_mati);
+
+            traffic_2_yellow_lamp.classList.remove(kuning_menyala);
+            traffic_2_yellow_lamp.classList.add(kuning_mati);
+
+            traffic_3_yellow_lamp.classList.remove(kuning_menyala);
+            traffic_3_yellow_lamp.classList.add(kuning_mati);
+
+            // nyalain lampu merah 1 & 2 dan setting variablenya
+            traffic_1_red_lamp.classList.remove(merah_mati);
+            traffic_1_red_lamp.classList.add(merah_menyala);
+            traffic_1 = false;
+
+            traffic_2_red_lamp.classList.remove(merah_mati);
+            traffic_2_red_lamp.classList.add(merah_menyala);
+            traffic_2 = false;
+
+            // nyalain lampu hijau 3 dan seting variable
+            traffic_3_green_lamp.classList.remove(hijau_mati);
+            traffic_3_green_lamp.classList.add(hijau_menyala);
+            traffic_3 = true;
+          }, 1000);
+        }
+      };
+
+      setTimeout(() => {
+        setInterval(lampLogic, timer);
+      }, timer);
+    </script>
+  </body>
+</html>
